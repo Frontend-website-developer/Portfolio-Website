@@ -124,7 +124,7 @@ h5{
     font-size: 18px;
     text-decoration: none;
     color: #111922;
-    margin-right: 15px;
+    margin-right: 15px; margin-bottom: 15px;
 }
 
 .about-graphic-image{ position: absolute; top: 0;}

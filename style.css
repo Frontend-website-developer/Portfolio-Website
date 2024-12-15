@@ -348,7 +348,7 @@ font-size: 18px; text-transform: uppercase; font-family: "Gantari", sans-serif;
     height: 100%;
     display: block;
     position: absolute;
-    inset: 0%;
+    inset: 0%; border-radius: 20px;
 }
 
 .p-relative{
@@ -449,5 +449,8 @@ font-size: 18px; text-transform: uppercase; font-family: "Gantari", sans-serif;
     }
     section.about{
         min-height: none;
+    }
+    .rotator-wrapper + .rotator-wrapper{
+        margin-top: 50px;
     }
 }

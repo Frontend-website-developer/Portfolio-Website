@@ -148,7 +148,22 @@ gsap.to(".projects-wrapper", {
         end: "top -300%",
         scrub: 2,
         pin:true,
+        markers: true,
     },
     
     transform: "translateY(-83%)",
+})
+
+gsap.to(".projects-right", {
+    scrollTrigger:{
+        trigger:".projects-right-wrapper",
+        scroller: "body",
+        start: "top 0%",
+        end: "top -300%",
+        scrub: 2,
+        pin:true,
+        markers: true,
+    },
+    
+    transform: "translateY(0%)",
 })

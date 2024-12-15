@@ -152,5 +152,5 @@ gsap.to(".projects-wrapper", {
         markers: true,
     },
     
-    transform: "translateY(-80%)",
+    transform: "translateY(-83%)",
 })

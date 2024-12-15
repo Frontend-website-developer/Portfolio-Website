@@ -1,6 +1,11 @@
 *{
     box-sizing: border-box;
 }
+
+a{
+    text-decoration: none;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -17,8 +22,27 @@ body{
     height: 20px;
     background: #fff;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 10;   
+    margin:0 auto; 
 }
+
+.global-cursor {
+    z-index: 99999;
+    position: relative;
+}
+
+.cursor-overlay{
+        z-index: 9;
+        /*justify-content: center;
+        align-items: center;*/
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        pointer-events: none;
+}
+
+.mw-100{max-width: 100%;}
 
 .banner
 {
@@ -29,6 +53,10 @@ body{
     padding: 0 0 100px 0;
     background-size: cover;
     font-weight: bold;
+    color: #fff;
+}
+
+.banner a{
     color: #fff;
 }
 
@@ -221,8 +249,17 @@ section.experience{
     align-items: center;
 }
 
-.experience-content{
+.experience-content, section.projects{
     padding: 100px 0;
+}
+
+section.projects{
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    max-height: 100vh;
 }
 
 .contact-banner{

@@ -1,20 +1,23 @@
 
+gsap.registerPlugin(ScrollTrigger);
+
 var menu = document.querySelector(".menu-button")
 var cross = document.querySelector(".close-button")
 var logo = document.querySelector(".logo")
 var main = document.querySelector("body")
+var links = document.querySelectorAll("a")
 
 var tl = gsap.timeline()
 
 tl.to(".nav", {
     right: "0",
-    duration: 0.8,
+    duration: 0.5,
 })
 
 tl.from(".nav h4", {
     x: 100,
     duration:1,
-    stagger:0.3,
+    stagger:0.2,
     opacity: 0
 })
 
@@ -34,8 +37,8 @@ cross.addEventListener("click", function(){
 
 main.addEventListener("mousemove", function(dets){
     gsap.to("#cursor",{
-        x:dets.x,
-        y:dets.y,
+        x:dets.x - 10,
+        y:dets.y - 10,
         ease: "back.out"
     })
 })
@@ -55,6 +58,36 @@ logo.addEventListener("mouseleave", function(){
         duration: 0.5
     })
 })
+
+links.forEach(function(link){
+    link.addEventListener("mouseenter", function(dets) {
+        gsap.to("#cursor", {
+            width: 50,
+            height: 50,
+            duration: 0.5,
+            x:dets.x - 30,
+            y:dets.y - 30,
+            ease: "back.out",
+            onStart: function() {
+                console.log(dets); // Log the event details when the animation starts
+            }
+        });
+    });
+    link.addEventListener("mouseleave", function(dets) {
+        gsap.to("#cursor", {
+            width: 20,
+            height: 20,
+            x:dets.x - 10,
+            y:dets.y - 10,
+            duration: 0.5,
+            ease: "back.out"
+        });
+    });
+})
+
+
+
+
 
 gsap.to(".marque", {
     transform: 'translateX(-200%)',
@@ -96,14 +129,28 @@ gsap.from(".degree-icon", {
 
 gsap.to(".experience h1", {
     transform: "translateX(-80%)",
-    duration: 10,
+    duration: 10,    
     scrollTrigger:{
         trigger:".experience",
         scroller: "body",
         start: "top 0%",
-        end: "bottom 50%",
-        scrub: true,
+        end: "top -100%",
+        scrub: 2,
         pin:true,
         markers: true
     }
+})
+
+gsap.to(".projects-wrapper", {
+    scrollTrigger:{
+        trigger:".projects",
+        scroller: "body",
+        start: "top 0%",
+        end: "top -300%",
+        scrub: 2,
+        pin:true,
+        markers: true,
+    },
+    
+    transform: "translateY(-80%)",
 })

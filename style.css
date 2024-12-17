@@ -453,4 +453,10 @@ font-size: 18px; text-transform: uppercase; font-family: "Gantari", sans-serif;
     .rotator-wrapper + .rotator-wrapper{
         margin-top: 50px;
     }
+    section.about {
+       display: block;
+        min-height: auto;
+        overflow-x: hidden;
+        padding: 100px 0 0;
+    }    
 }

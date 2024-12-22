@@ -16,7 +16,7 @@ tl.to(".nav", {
 
 tl.from(".nav h4", {
     x: 100,
-    duration:1,
+    duration:0.5,
     stagger:0.2,
     opacity: 0
 })
@@ -65,12 +65,9 @@ links.forEach(function(link){
             width: 50,
             height: 50,
             duration: 0.5,
-            x:dets.x - 30,
-            y:dets.y - 30,
+            x:dets.x - 60,
+            y:dets.y - 60,
             ease: "back.out",
-            onStart: function() {
-                console.log(dets); // Log the event details when the animation starts
-            }
         });
     });
     link.addEventListener("mouseleave", function(dets) {
@@ -79,6 +76,16 @@ links.forEach(function(link){
             height: 20,
             x:dets.x - 10,
             y:dets.y - 10,
+            duration: 0.5,
+            ease: "back.out"
+        });
+    });
+    link.addEventListener("mousemove", function(dets) {
+        gsap.to("#cursor", {
+            width: 50,
+            height: 50,
+            x:dets.x - 22,
+            y:dets.y - 22,
             duration: 0.5,
             ease: "back.out"
         });
@@ -129,14 +136,14 @@ gsap.from(".degree-icon", {
 
 gsap.to(".experience h1", {
     transform: "translateX(-80%)",
-    duration: 10,    
     scrollTrigger:{
         trigger:".experience",
         scroller: "body",
         start: "top 0%",
-        end: "top -100%",
-        scrub: 2,
+        end: "top -200%",
+        scrub: true,
         pin:true,
+        ease: "sine.out",
     }
 })
 
@@ -146,7 +153,7 @@ gsap.to(".projects-wrapper", {
         scroller: "body",
         start: "top 0%",
         end: "top -300%",
-        scrub: 2,
+        scrub: true,
         pin:true,
     },
     
@@ -159,7 +166,7 @@ gsap.to(".projects-right", {
         scroller: "body",
         start: "top 0%",
         end: "top -300%",
-        scrub: 2,
+        scrub: true,
         pin:true,
     },
     

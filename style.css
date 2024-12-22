@@ -68,7 +68,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 0;
+    padding: 40px 0; text-align: center;
 }
 
 nav i{
@@ -105,6 +105,7 @@ h4{
 
 h4 span{
     font-size: 24px;
+    display: block;
 }
 
 h5{
@@ -120,11 +121,13 @@ h5{
     padding: 10px 20px;
     border-radius: 30px;
     display: inline-block;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 15px;
     text-decoration: none;
     color: #111922;
-    margin-right: 15px; margin-bottom: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    letter-spacing: .5px;
 }
 
 .about-graphic-image{ position: absolute; top: 0;}
@@ -166,9 +169,13 @@ section.about{
 }
 
 .nav h4{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.nav a{
+    color: #111;
 }
 
 .container{
@@ -262,9 +269,9 @@ section.projects{
     position: relative;
     overflow: hidden;
     width:100%;
-    height: 100vh;
+    height:100vh;
     display: flex;
-    max-height: 100vh;
+    margin: 50px 0;
 }
 
 .contact-banner{
@@ -286,6 +293,7 @@ width: 100%;
 height: 50px;
 background: #FFFFFF;
 border-radius: 12px;
+padding: 0 15px;
 }
 
 textarea.form-control{
@@ -293,6 +301,7 @@ width: 100%;
 height: 250px;
 background: #FFFFFF;
 border-radius: 12px;
+padding: 15px;
 }
 
 .mt-5{

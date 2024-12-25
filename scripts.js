@@ -7,6 +7,12 @@ var logo = document.querySelector(".logo")
 var main = document.querySelector("body")
 var links = document.querySelectorAll("a")
 
+var navigation = document.querySelectorAll(".nav a")
+
+console.log(navigation)
+
+console.log(links)
+
 var tl = gsap.timeline()
 
 tl.to(".nav", {
@@ -34,6 +40,11 @@ menu.addEventListener("click", function(){
 cross.addEventListener("click", function(){
     tl.reverse()
 })
+
+navigation.onclick = function(){
+    console.log("clicked")
+    tl.reverse()
+}
 
 main.addEventListener("mousemove", function(dets){
     gsap.to("#cursor",{

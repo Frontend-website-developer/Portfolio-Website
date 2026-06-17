@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+*, *::before, *::after, :hover, :focus, :active{
+    cursor: none !important;
+}
+
 a{
     text-decoration: none;
 }
@@ -14,6 +18,7 @@ body{
     font-family: "Gantari", sans-serif;
     overflow-x: hidden;
     background: #f1f1f1;
+    cursor: none !important;
 }
 
 #cursor{
@@ -43,6 +48,22 @@ body{
 }
 
 .mw-100{max-width: 100%;}
+
+.resume-download-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #A8FF35;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    color: #111922;
+    letter-spacing: .5px;
+    z-index: 9999;
+}
 
 .banner
 {

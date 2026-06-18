@@ -10,7 +10,8 @@
     <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <a class="resume-download-button" href="syed-sajid-ali-front-end-developer.pdf" target="_blank">Download Resume</a>
@@ -286,22 +287,22 @@
     </div>    
     <div class="container">
         <h2 class="text-center">Contact Me</h2>
-        <form action="">
+        <form id="contact-form" action="">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-6">
                             <label for="Name">Name:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="user-name" class="form-control">
                         </div> 
                         <div class="col-lg-6">
                             <label for="Email">Email:</label>
-                            <input type="email" class="form-control">
+                            <input type="email" name="user-email" class="form-control">
                         </div>                
                     </div>  
                     <div class="mt-5">
                         <label for="Message">Message</label>
-                        <textarea name="" id="" class="form-control"></textarea>
+                        <textarea name="user-message" id="user-message" class="form-control"></textarea>
                     </div>
                     <div class="submit-button">
                         <input type="submit" class="submit-insider" value="Submit">
@@ -310,11 +311,41 @@
                 
             </div>                      
         </form>
+        <p id="status"></p>
     </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script text="text/javascript" src="scripts.js"></script>    
+<script text="text/javascript" src="scripts.js"></script>
+<script>
+  emailjs.init({
+    publicKey: "R6VEDu_mqyr1kZbxl",
+  });
+
+  document
+  .getElementById("contact-form")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    emailjs.sendForm(
+      "service_pdfdxtp",
+      "template_gou9x6g",
+      this
+    )
+    .then(() => {
+      document.getElementById("status").innerText =
+        "Message sent successfully!";
+      this.reset();
+    })
+    .catch((error) => {
+      document.getElementById("status").innerText =
+        "Failed to send message.";
+      console.error(error);
+    });
+
+});
+</script>    
 </body>
 </html>

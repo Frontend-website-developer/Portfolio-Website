@@ -146,12 +146,12 @@ gsap.from(".degree-icon", {
 })
 
 gsap.to(".experience h1", {
-    transform: "translateX(-80%)",
+    transform: "translateX(-50%)",
     scrollTrigger:{
         trigger:".experience",
         scroller: "body",
         start: "top 0%",
-        end: "top -200%",
+        end: "top -100%",
         scrub: true,
         pin:true,
         ease: "sine.out",
